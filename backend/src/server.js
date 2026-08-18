@@ -1,11 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const bookRoutes = require("./routes/bookRoutes");
 
 const app = express();
 
-app.use((cors));
+app.use(cors());
 app.use(express.json());
+app.use("/book", bookRoutes);
 
 app.get("/", (req, res) => {
   res.send("Está rodando!");
